@@ -1,15 +1,28 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/Home.module.css'
+import Header from '../components/Header';
 
 const Home: NextPage = () => {
   return (
-    <div className={styles.container}>
+    <div >
       <Head>
         <title>Steve's Portfolio</title>
-      </Head>
-      <h1 className="text-red-500">Let's Build an AWESOME portfolio</h1>
+      </Head>  
+
+      {/* Header */}
+      <Header />
+
+      {/* Hero */}
+
+      { /* About */ }
+
+      {/* Experience */ }
+
+      {/* Skills */}
+      
+      {/* Projects */}
+
+      {/* Contact Me */} 
 
     </div>
   )
