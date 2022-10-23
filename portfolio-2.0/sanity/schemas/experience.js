@@ -11,10 +11,7 @@ export default {
     {
       name: "jobTitle",
       title: "JobTitle",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      type: "string",
     }, 
     {
       name: "companyName",
@@ -32,7 +29,7 @@ export default {
     {
       name: "dateStarted",
       title: "DateStarted",
-      type: "string",
+      type: "date",
     }, 
     {
       name: "dateEnded",
