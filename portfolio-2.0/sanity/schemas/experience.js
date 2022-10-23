@@ -1,6 +1,6 @@
 export default {
-  name: 'pageInfo',
-  title: 'PageInfo',
+  name: 'experience',
+  title: 'Experience',
   type: 'document',
   fields: [
     {
@@ -9,46 +9,52 @@ export default {
       type: "string",
     },
     {
-      name: "heroImage",
-      title: "Image",
+      name: "jobTitle",
+      title: "JobTitle",
       type: "image",
       options: {
         hotspot: true,
       },
     }, 
     {
-      name: "backgroundInformation",
-      title: "BackgroundInformation",
-      type: "string",
-    },
-    {
-      name: "profilePic",
-      title: "ProfilePic",
+      name: "companyName",
+      title: "Company Image",
       type: "image",
       options: {
         hotspot: true,
-      },
+      }
     },
     {
-      name: "phoneNumber",
-      title: "PhoneNumber",
+      name: "company",
+      title: "Company",
+      type: "text",
+    },
+    {
+      name: "dateStarted",
+      title: "DateStarted",
       type: "string",
     }, 
     {
-      name: "email",
-      title: "Email",
-      type: "string",
+      name: "dateEnded",
+      title: "DateEnded",
+      type: "date",
     },
     {
-      name: "address",
-      title: "Address",
-      type: "string",
+      name: "isCurrentlyWorkingHere",
+      title: "isCurrentlyWorkingHere",
+      type: "boolean",
     },
     {
-      name: "socials",
-      title: "Socials",
+      name: "technologies",
+      title: "Technologies",
       type: "array",
-      of: [{ type: "reference", to: { type: "social" }}],
+      of: [{ type: "reference", to: { type: "skill" }}],
+    },
+    {
+      name: "points", 
+      title: "Points", 
+      type: "array", 
+      of: [{ type: "string" }],
     },
   ],
 }
