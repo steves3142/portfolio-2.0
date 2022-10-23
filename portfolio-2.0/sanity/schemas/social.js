@@ -1,12 +1,18 @@
 export default {
-  name: 'pageInfo',
-  title: 'PageInfo',
+  name: 'social',
+  title: 'Social',
   type: 'document',
   fields: [
     {
-      name: "name",
-      title: "Name",
+      name: "title",
+      title: "title",
+      description: "platform for social media",
       type: "string",
     },
+    {
+      name: "url",
+      title: "Url",
+      type: "url",
+    }, 
   ],
-}
+}; 
