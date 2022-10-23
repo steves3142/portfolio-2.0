@@ -1,15 +1,16 @@
 export default {
-  name: 'pageInfo',
-  title: 'PageInfo',
-  type: 'document',
+  name: "project",
+  title: "Project",
+  type: "document",
   fields: [
     {
-      name: "name",
-      title: "Name",
+      name: "title",
+      title: "title",
+      description: "Title of the project",
       type: "string",
     },
     {
-      name: "heroImage",
+      name: "image",
       title: "Image",
       type: "image",
       options: {
@@ -17,38 +18,20 @@ export default {
       },
     }, 
     {
-      name: "backgroundInformation",
-      title: "BackgroundInformation",
-      type: "string",
+      name: "summary",
+      title: "Summary",
+      type: "text",
     },
     {
-      name: "profilePic",
-      title: "ProfilePic",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
-      name: "phoneNumber",
-      title: "PhoneNumber",
-      type: "string",
-    }, 
-    {
-      name: "email",
-      title: "Email",
-      type: "string",
-    },
-    {
-      name: "address",
-      title: "Address",
-      type: "string",
-    },
-    {
-      name: "socials",
-      title: "Socials",
+      name: "technologies",
+      title: "Technologies",
       type: "array",
-      of: [{ type: "reference", to: { type: "social" }}],
+      of: [{ type: "reference", to: { type: "skill" }}],
     },
+    {
+      name: "linkToBuild",
+      title: "LinkToBuild",
+      type: "url",
+    }, 
   ],
-}
+}; 
