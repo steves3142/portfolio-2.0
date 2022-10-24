@@ -4,17 +4,12 @@ export default {
   type: 'document',
   fields: [
     {
-      name: "name",
-      title: "Name",
-      type: "string",
-    },
-    {
       name: "jobTitle",
       title: "JobTitle",
       type: "string",
     }, 
     {
-      name: "companyName",
+      name: "companyImage",
       title: "Company Image",
       type: "image",
       options: {
@@ -38,7 +33,7 @@ export default {
     },
     {
       name: "isCurrentlyWorkingHere",
-      title: "isCurrentlyWorkingHere",
+      title: "IsCurrentlyWorkingHere",
       type: "boolean",
     },
     {
