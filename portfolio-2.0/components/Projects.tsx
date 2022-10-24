@@ -1,10 +1,13 @@
 import React from 'react'
 import { motion } from "framer-motion";
+import { Project } from '../typings';
+import { urlFor } from '../sanity';
 
-type Props = {}
+type Props = {
+    projects: Project[];
+}
 
-function Projects({ }: Props) {
-    const projects = [1, 2, 3, 4, 5];
+function Projects({ projects }: Props) {
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -26,7 +29,7 @@ function Projects({ }: Props) {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 1.2 }}
                             viewport={{ once: true }}
-                            src="https://camo.githubusercontent.com/5b7dc636845c58a3007d220c2ff200815fdd35bbdda8e6acc9b47d22633a4110/68747470733a2f2f6d656469612e67697068792e636f6d2f6d656469612f6e6b59494a6c6a7a6b75716c556c78306a492f67697068792e676966"
+                            src={urlFor(project?.image).url()}
                             alt=""
                         />
 
@@ -35,18 +38,29 @@ function Projects({ }: Props) {
                                 <span className="underline decoration-[#F7AB0A]/50">
                                     Case Study {i + 1} of {projects.length}:
                                 </span>{" "}
-                                Spotify 2.0
+                                {project?.title}
                             </h4>
 
+                            <div className="flex items-center space-x-2 justify-center">
+                                {project?.technologies.map(technology => (
+                                    <img 
+                                        className="h-10 w-10"
+                                        key={technology._id}
+                                        src={urlFor(technology.image).url()}
+                                        alt=""
+                                    />
+                                ))}
+                            </div>
+
                             <p className="text-lg text-center md:text-left">
-                                This is a lean spotify clone which connects to a local spotify device once logged in. Using NextAuth allows for the Spotify Web API to authenticate the user and determine whether or not the user has a valid account. Tailwind allows for stunning hover effects when selecting playlists and gradient backgrounds. Recoil allows for the creation of playlist atoms to be able to use playlist information retrieved from the Spotify Web API globally throughout the code.
+                                {project?.summary}
                             </p>
                         </div>
                     </div>
                 ))}
             </div>
 
-            <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12"/>
+            <div className="w-full absolute top-[30%] bg-[#F7AB0A]/10 left-0 h-[500px] -skew-y-12" />
         </motion.div>
     )
 }
