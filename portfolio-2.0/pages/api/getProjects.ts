@@ -4,19 +4,21 @@ import { sanityClient } from "../../sanity";
 import { Project } from "../../typings";
 
 const query = groq`
-*[_type == "project" ] {
+  *[_type == "project"] {
     ...,
     technologies[]->
-}
+  }
 `;
-type Data = {
-    projects: Project[]
-}
-export default async function handler(
-    req: NextApiRequest,
-    res: NextApiResponse<Data>
-) {
-    const projects: Project[] = await sanityClient.fetch(query);
 
-    res.status(200).json({ projects })
+type Data = {
+  projects: Project[];
+};
+
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>
+) {
+  const projects: Project[] = await sanityClient.fetch(query);
+
+  res.status(200).json({ projects });
 }
